@@ -300,7 +300,9 @@ html{scroll-behavior:smooth;}
 <h2 class="section-title">5 Sessions</h2>
 <div class="ovr"><a href="u1s1.html"><span class="n">1</span><span><span class="t">Session 1 · Learn Words</span><br><span class="s">5 words to say</span></span></a><div class="ovr-lock"><span class="n">2</span><span><span class="t">Session 2 · Story Time</span><br><span class="s">Read Milo's first story</span></span><span class="lockico">🔒</span></div><div class="ovr-lock"><span class="n">3</span><span><span class="t">Session 3 · Grammar</span><br><span class="s">This / is / has</span></span><span class="lockico">🔒</span></div><div class="ovr-lock"><span class="n">4</span><span><span class="t">Session 4 · Phonics</span><br><span class="s">First sounds /b/ /d/</span></span><span class="lockico">🔒</span></div><div class="ovr-lock"><span class="n">5</span><span><span class="t">Session 5 · Speaking</span><br><span class="s">Record + Final test</span></span><span class="lockico">🔒</span></div></div>
 <p class="section-sub" style="margin-top:6px">🔒 Sessions 2-5 unlock in your course after each step.</p>
-<div class="next"><button onclick="location.href='u1s1.html'">Start Session 1 →</button></div>
+<div class="next">
+  <button onclick="closeMoodleModal()">Back to course</button>
+</div>
 </div>
 <script>
 const AB='https://klis-skyline.pages.dev/';
@@ -317,5 +319,14 @@ function matchInit(){const box=document.getElementById('match');if(!box)return;l
 }
 function postH(){parent.postMessage({skyH:document.documentElement.scrollHeight},'*');}
 addEventListener('load',function(){postH();sayInit();matchInit();});new ResizeObserver(postH).observe(document.body);
-
+function closeMoodleModal() {
+  try {
+    window.parent.postMessage(
+      { skyAction: 'closeTilesModal' },
+      'https://online.bringtonacademy.org'
+    );
+  } catch (e) {
+    console.warn('Cannot send close message to Moodle parent:', e);
+  }
+}
 </script></body></html>

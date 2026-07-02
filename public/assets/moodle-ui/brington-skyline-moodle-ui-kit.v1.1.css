@@ -888,3 +888,32 @@
   z-index: 3 !important;
   pointer-events: none !important;
 }
+/* =========================================================
+   HOTFIX v1.4 - Moodle-safe full-width hero swoosh
+   Use CSS background instead of inline SVG because Moodle strips SVG attrs
+   ========================================================= */
+
+#page-site-index .skl-brington-home .skl-hero-swoosh {
+  position: absolute !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: -1px !important;
+  transform: translateX(-50%) !important;
+  width: 100vw !important;
+  min-width: 100vw !important;
+  max-width: 100vw !important;
+  height: 88px !important;
+  display: block !important;
+  z-index: 6 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+  background-position: center bottom !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 88' preserveAspectRatio='none'%3E%3Cpath d='M0 44 C 360 90 760 90 1080 58 C 1250 40 1360 28 1440 22 L1440 88 L0 88 Z' fill='%23CE9412'/%3E%3Cpath d='M0 56 C 360 98 760 98 1080 68 C 1250 50 1360 40 1440 34 L1440 88 L0 88 Z' fill='%23172A4E'/%3E%3Cpath d='M0 68 C 360 106 760 106 1080 80 C 1250 64 1360 56 1440 50 L1440 88 L0 88 Z' fill='%23ffffff'/%3E%3C/svg%3E") !important;
+}
+
+/* If old svg paths are still cached somewhere, hide them */
+#page-site-index .skl-brington-home .skl-hero-swoosh path {
+  display: none !important;
+}

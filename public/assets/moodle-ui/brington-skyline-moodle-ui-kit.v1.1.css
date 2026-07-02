@@ -291,3 +291,23 @@
 @media(max-width:440px){ .skl-brington-home .skl-grid { grid-template-columns:1fr; } }
 @media(prefers-reduced-motion:reduce){ .skl-brington-home * { transition:none!important; } }
 .skl-brington-home a:focus-visible { outline:3px solid var(--skl-gold); outline-offset:2px; }
+
+/* ===== Moodle right drawer safe spacing fix ===== */
+.skl-brington-home {
+  max-width: 1680px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: clamp(16px, 2vw, 34px);
+  padding-right: clamp(56px, 4vw, 72px);
+}
+
+.skl-brington-home .skl-hero {
+  border-radius: 0 0 18px 18px;
+}
+
+@media (max-width: 1080px) {
+  .skl-brington-home {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

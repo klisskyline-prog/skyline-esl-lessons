@@ -706,3 +706,54 @@
   }
 }
 
+/* =========================================================
+   MOODLE MY COURSES CARD PATCH v1.1
+   Fix oversized "All courses" button.
+   Append AFTER My Courses Card Patch v1.0.
+   ========================================================= */
+
+#page-site-index #frontpage-course-list .paging.paging-morelink {
+  grid-column: 1 / -1 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  height: auto !important;
+  margin: 28px 0 0 !important;
+  padding: 0 !important;
+}
+
+/* Force the button to stay normal size, not stretch like a card/grid item. */
+#page-site-index #frontpage-course-list .paging.paging-morelink a,
+#page-site-index #frontpage-course-list .paging.paging-morelink .btn,
+#page-site-index #frontpage-course-list .paging-morelink a,
+#page-site-index #frontpage-course-list .paging-morelink .btn {
+  width: auto !important;
+  min-width: 132px !important;
+  max-width: max-content !important;
+  height: 42px !important;
+  min-height: 42px !important;
+  max-height: 42px !important;
+  padding: 0 22px !important;
+  border-radius: 999px !important;
+  display: inline-flex !important;
+  flex: 0 0 auto !important;
+  align-items: center !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  background: linear-gradient(135deg,#172A4E,#155BC0) !important;
+  color: #fff !important;
+  border: 1px solid rgba(206,148,18,.34) !important;
+  box-shadow: 0 10px 22px rgba(15,29,56,.16) !important;
+}
+
+/* In case Moodle places the paging item inside the same row/grid as course cards. */
+#page-site-index #frontpage-course-list .courses.frontpage-course-list-enrolled > .paging,
+#page-site-index #frontpage-course-list .courses.frontpage-course-list-enrolled > .paging-morelink {
+  align-self: center !important;
+  justify-self: center !important;
+}

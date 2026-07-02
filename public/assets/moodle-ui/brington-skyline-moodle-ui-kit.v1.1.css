@@ -569,4 +569,417 @@
     padding-right: 12px !important;
   }
 }
+/* =========================================================
+   MOODLE HEADER LUXE PATCH v2.0
+   Scope: Front page only (#page-site-index)
+   Append AFTER previous header patch.
+   Style direction: premium navy/gold, glass, glow, no hero width change.
+   ========================================================= */
+
+/* ===== Premium global page tone ===== */
+#page-site-index {
+  background:
+    radial-gradient(circle at 8% 0%, rgba(206,148,18,.08), transparent 28%),
+    radial-gradient(circle at 86% 4%, rgba(46,127,203,.10), transparent 30%),
+    #ffffff;
+}
+
+/* ===== Main Moodle top navbar: luxe navy glass ===== */
+#page-site-index .navbar.fixed-top {
+  min-height: 68px !important;
+  background:
+    linear-gradient(115deg, rgba(8,22,47,.98) 0%, rgba(18,42,78,.98) 42%, rgba(22,78,170,.96) 100%) !important;
+  border-bottom: 1px solid rgba(227,174,68,.48) !important;
+  box-shadow:
+    0 14px 34px rgba(8,22,47,.30),
+    inset 0 -1px 0 rgba(255,255,255,.10) !important;
+  backdrop-filter: blur(14px);
+  z-index: 1035 !important;
+  padding-left: 0 !important;
+  padding-right: 14px !important;
+  overflow: visible;
+}
+
+#page-site-index .navbar.fixed-top::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #CE9412 16%, #F6D37B 50%, #CE9412 84%, transparent 100%);
+  opacity: .95;
+  pointer-events: none;
+}
+
+#page-site-index .navbar.fixed-top::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  height: 10px;
+  background: linear-gradient(180deg, rgba(8,22,47,.20), transparent);
+  pointer-events: none;
+}
+
+/* ===== Logo area ===== */
+#page-site-index .navbar.fixed-top .navbar-brand {
+  min-height: 68px !important;
+  min-width: 146px;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-right: 16px !important;
+  padding: 0 20px !important;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.98), rgba(245,249,255,.92)) !important;
+  border-right: 1px solid rgba(206,148,18,.32);
+  box-shadow:
+    inset -1px 0 0 rgba(255,255,255,.35),
+    8px 0 28px rgba(0,0,0,.18);
+}
+
+#page-site-index .navbar.fixed-top .navbar-brand img.logo {
+  max-height: 38px !important;
+  width: auto !important;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(15,29,56,.14));
+}
+
+/* ===== Main nav links ===== */
+#page-site-index .primary-navigation .navigation .nav-link,
+#page-site-index .navbar.fixed-top .nav-link {
+  min-height: 68px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  color: rgba(255,255,255,.88) !important;
+  font-weight: 750 !important;
+  letter-spacing: .01em;
+  border-radius: 0 !important;
+  padding: 0 15px !important;
+  position: relative;
+  transition: color .18s ease, background .18s ease, transform .18s ease;
+}
+
+#page-site-index .primary-navigation .navigation .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 13px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #CE9412, #F6D37B);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform .18s ease;
+}
+
+#page-site-index .primary-navigation .navigation .nav-link:hover {
+  color: #ffffff !important;
+  background: rgba(255,255,255,.08) !important;
+  transform: translateY(-1px);
+}
+
+#page-site-index .primary-navigation .navigation .nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+#page-site-index .primary-navigation .navigation .nav-link.active {
+  color: #0F1D38 !important;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8E7B7 100%) !important;
+  font-weight: 900 !important;
+  box-shadow:
+    0 10px 22px rgba(0,0,0,.18),
+    inset 0 -2px 0 rgba(206,148,18,.55);
+}
+
+#page-site-index .primary-navigation .navigation .nav-link.active::after {
+  transform: scaleX(1);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+/* Dropdown links */
+#page-site-index .navbar.fixed-top .dropdown-menu {
+  border: 1px solid rgba(206,148,18,.20) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 20px 50px rgba(8,22,47,.22) !important;
+  overflow: hidden;
+}
+
+#page-site-index .navbar.fixed-top .dropdown-item {
+  font-weight: 650;
+  color: #172A4E !important;
+}
+
+#page-site-index .navbar.fixed-top .dropdown-item:hover {
+  background: #FFF7E6 !important;
+  color: #0F1D38 !important;
+}
+
+/* ===== Right user navigation ===== */
+#page-site-index #usernavigation {
+  align-items: center !important;
+  gap: 3px;
+}
+
+#page-site-index #usernavigation .popover-region-toggle,
+#page-site-index #usernavigation #user-menu-toggle {
+  min-height: 42px !important;
+  height: 42px !important;
+  min-width: 42px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  color: #fff !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,.10) !important;
+  border: 1px solid rgba(255,255,255,.16) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.12);
+  padding: 0 10px !important;
+}
+
+#page-site-index #usernavigation .popover-region-toggle:hover,
+#page-site-index #usernavigation #user-menu-toggle:hover {
+  background: rgba(255,255,255,.18) !important;
+}
+
+#page-site-index #usernavigation .icon {
+  color: #fff !important;
+}
+
+#page-site-index #usernavigation .count-container {
+  background: linear-gradient(135deg, #E23A3A, #CE9412) !important;
+  color: #fff !important;
+  border: 2px solid #0F1D38 !important;
+  box-shadow: 0 4px 12px rgba(206,148,18,.36) !important;
+  font-weight: 900 !important;
+}
+
+#page-site-index #usernavigation .userinitials {
+  background: linear-gradient(135deg, #FFFFFF, #F8E7B7) !important;
+  color: #172A4E !important;
+  border: 1px solid rgba(206,148,18,.38) !important;
+  font-weight: 900 !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,.16);
+}
+
+#page-site-index #usernavigation .divider {
+  border-left-color: rgba(255,255,255,.18) !important;
+}
+
+/* Edit mode switch: gold premium */
+#page-site-index .editmode-switch-form {
+  margin-left: 12px !important;
+  padding-left: 16px !important;
+  border-left: 1px solid rgba(255,255,255,.20) !important;
+}
+
+#page-site-index .editmode-switch-form label {
+  color: #fff !important;
+  font-weight: 850 !important;
+  letter-spacing: .01em;
+}
+
+#page-site-index .editmode-switch-form .form-check-input {
+  width: 42px;
+  height: 22px;
+  cursor: pointer;
+  border-color: rgba(255,255,255,.35) !important;
+  background-color: rgba(255,255,255,.24) !important;
+  box-shadow: none !important;
+}
+
+#page-site-index .editmode-switch-form .form-check-input:checked {
+  background-color: #CE9412 !important;
+  border-color: #F6D37B !important;
+  box-shadow: 0 0 0 3px rgba(206,148,18,.18) !important;
+}
+
+/* ===== Secondary nav: royal blue/gold bar ===== */
+#page-site-index .secondary-navigation.moove {
+  min-height: 62px !important;
+  background:
+    linear-gradient(115deg, #061936 0%, #0E3475 48%, #155BC0 100%) !important;
+  border: 0 !important;
+  box-shadow:
+    0 12px 26px rgba(8,22,47,.26),
+    inset 0 1px 0 rgba(255,255,255,.08),
+    inset 0 -1px 0 rgba(206,148,18,.52) !important;
+  position: relative;
+  z-index: 1030 !important;
+}
+
+#page-site-index .secondary-navigation.moove::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(246,211,123,.18), transparent 22%),
+    radial-gradient(circle at 76% 0%, rgba(255,255,255,.12), transparent 24%);
+  pointer-events: none;
+}
+
+#page-site-index .secondary-navigation.moove .moove-container-fluid {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 34px;
+  padding-right: 34px;
+  position: relative;
+  z-index: 2;
+}
+
+#page-site-index .secondary-navigation.moove .nav-tabs {
+  border-bottom: 0 !important;
+  gap: 4px;
+}
+
+#page-site-index .secondary-navigation.moove .nav-link {
+  min-height: 62px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  border: 0 !important;
+  color: rgba(255,255,255,.86) !important;
+  font-weight: 800 !important;
+  padding: 0 17px !important;
+  position: relative;
+  border-radius: 14px 14px 0 0 !important;
+  transition: background .18s ease, color .18s ease, transform .18s ease;
+}
+
+#page-site-index .secondary-navigation.moove .nav-link:hover {
+  color: #fff !important;
+  background: rgba(255,255,255,.10) !important;
+  transform: translateY(-1px);
+}
+
+#page-site-index .secondary-navigation.moove .nav-link.active,
+#page-site-index .secondary-navigation.moove .nav-link.active_tree_node {
+  color: #172A4E !important;
+  background:
+    linear-gradient(180deg, #FFFFFF 0%, #FFF2CC 100%) !important;
+  box-shadow:
+    0 -2px 18px rgba(246,211,123,.26),
+    inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+#page-site-index .secondary-navigation.moove .nav-link.active::after,
+#page-site-index .secondary-navigation.moove .nav-link.active_tree_node::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #CE9412, #F6D37B, #CE9412);
+  border-radius: 999px 999px 0 0;
+}
+
+/* ===== Make drawer tab match the premium header ===== */
+#page-site-index .drawer-toggler.drawer-right-toggle .btn {
+  background: linear-gradient(135deg, #0E3475, #155BC0) !important;
+  color: #fff !important;
+  border: 1px solid rgba(246,211,123,.45) !important;
+  box-shadow: 0 12px 28px rgba(8,22,47,.28), inset 0 1px 0 rgba(255,255,255,.14) !important;
+}
+
+#page-site-index .drawer-toggler.drawer-right-toggle .btn:hover {
+  background: linear-gradient(135deg, #155BC0, #CE9412) !important;
+}
+
+/* ===== Keep the white gap removed from previous patch ===== */
+#page-site-index #page-header {
+  display: none !important;
+}
+
+#page-site-index #topofscroll.main-inner,
+#page-site-index #page-content,
+#page-site-index #region-main-box,
+#page-site-index #region-main,
+#page-site-index .course-content,
+#page-site-index #courseformat-frontpage-main-topic,
+#page-site-index .sitetopic,
+#page-site-index .sitetopic .section-list,
+#page-site-index .sitetopic .course-section,
+#page-site-index .sitetopic .section-item,
+#page-site-index .sitetopic .content,
+#page-site-index .sitetopic [data-for="sectioninfo"],
+#page-site-index .sitetopic .summarytext,
+#page-site-index .sitetopic .no-overflow {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+#page-site-index .sitetopic .no-overflow {
+  overflow: visible !important;
+}
+
+#page-site-index #topofscroll.main-inner,
+#page-site-index #region-main,
+#page-site-index .sitetopic .section-item {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Gear edit button still available, but premium and floating */
+#page-site-index #courseformat-frontpage-main-topic > .mb-2 {
+  position: absolute;
+  z-index: 60;
+  top: 10px;
+  left: 12px;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: auto;
+  height: auto;
+}
+
+#page-site-index #courseformat-frontpage-main-topic > .mb-2 a {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,.88);
+  color: #0E3475 !important;
+  border: 1px solid rgba(206,148,18,.32);
+  border-radius: 999px;
+  box-shadow: 0 8px 22px rgba(8,22,47,.18);
+  backdrop-filter: blur(8px);
+}
+
+#page-site-index #courseformat-frontpage-main-topic > .mb-2 a:hover {
+  background: linear-gradient(135deg, #FFFFFF, #FFF2CC);
+  color: #0F1D38 !important;
+}
+
+/* ===== Mobile safety ===== */
+@media (max-width: 900px) {
+  #page-site-index .navbar.fixed-top {
+    padding-right: 8px !important;
+  }
+
+  #page-site-index .navbar.fixed-top .navbar-brand {
+    min-width: 108px;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  #page-site-index .primary-navigation .navigation .nav-link,
+  #page-site-index .secondary-navigation.moove .nav-link {
+    padding-left: 11px !important;
+    padding-right: 11px !important;
+    font-size: 13px;
+  }
+
+  #page-site-index .secondary-navigation.moove .moove-container-fluid {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 

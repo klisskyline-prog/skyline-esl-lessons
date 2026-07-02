@@ -757,3 +757,122 @@
   align-self: center !important;
   justify-self: center !important;
 }
+/* =========================================================
+   HOTFIX v1.2 - Brington/Skyline Moodle Hero Top Clipping
+   Append at the END of current CSS file
+   ========================================================= */
+
+#page-site-index .skl-brington-home {
+  --skl-safe-top: 72px;
+  overflow: hidden !important;
+}
+
+/* Give hero content safe space so Moodle sticky/header area does not cut it */
+#page-site-index .skl-brington-home .skl-hero {
+  position: relative !important;
+  min-height: 470px !important;
+  overflow: hidden !important;
+}
+
+/* Push hero text down safely */
+#page-site-index .skl-brington-home .skl-hero-in {
+  min-height: 470px !important;
+  padding-top: calc(38px + var(--skl-safe-top)) !important;
+  padding-bottom: 92px !important;
+  align-items: center !important;
+}
+
+/* Stabilize right image crop */
+#page-site-index .skl-brington-home .skl-hero-photo {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  height: 100% !important;
+  width: 56% !important;
+}
+
+#page-site-index .skl-brington-home .skl-hero-photo img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: 54% 50% !important;
+}
+
+/* Keep swoosh attached to bottom, not floating over programs */
+#page-site-index .skl-brington-home .skl-hero-swoosh {
+  bottom: -1px !important;
+  height: 92px !important;
+  z-index: 3 !important;
+  pointer-events: none !important;
+}
+
+/* Give Core Programs better breathing space after swoosh */
+#page-site-index .skl-brington-home .skl-programs {
+  padding-top: 44px !important;
+}
+
+/* Minor HTML compatibility: your HTML uses strong, current CSS styles b */
+#page-site-index .skl-brington-home .skl-lbl strong {
+  display: block;
+  font-size: 15px;
+  color: var(--skl-navy);
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+}
+
+#page-site-index .skl-brington-home .skl-record strong {
+  color: var(--skl-ink);
+  font-weight: 700;
+}
+
+/* Restore shield icon without needing to edit HTML */
+#page-site-index .skl-brington-home .skl-record::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  margin-top: 2px;
+  background: var(--skl-navy);
+  clip-path: polygon(50% 0%, 90% 14%, 90% 52%, 50% 100%, 10% 52%, 10% 14%);
+}
+
+/* Tablet/mobile: avoid giant empty top space */
+@media (max-width: 1080px) {
+  #page-site-index .skl-brington-home {
+    --skl-safe-top: 24px;
+  }
+
+  #page-site-index .skl-brington-home .skl-hero {
+    min-height: 0 !important;
+  }
+
+  #page-site-index .skl-brington-home .skl-hero-in {
+    min-height: 0 !important;
+    padding-top: 42px !important;
+    padding-bottom: 36px !important;
+    display: block !important;
+  }
+
+  #page-site-index .skl-brington-home .skl-hero-photo {
+    position: relative !important;
+    width: calc(100% - 40px) !important;
+    height: auto !important;
+    margin: 20px auto 54px !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+  }
+
+  #page-site-index .skl-brington-home .skl-hero-photo img {
+    height: auto !important;
+    aspect-ratio: 1.95 / 1 !important;
+  }
+
+  #page-site-index .skl-brington-home .skl-hero-swoosh {
+    height: 66px !important;
+  }
+
+  #page-site-index .skl-brington-home .skl-programs {
+    padding-top: 30px !important;
+  }
+}

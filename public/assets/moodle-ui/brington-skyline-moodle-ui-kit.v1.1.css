@@ -338,741 +338,86 @@
   z-index: 1050 !important;
 }
 
-/* =========================================================
-   MOODLE DEFAULT HEADER POLISH PATCH v1.0
-   Scope: front page only (#page-site-index)
-   Purpose:
-   - polish Moodle/Moove default top header + secondary nav
-   - remove white gap above custom Brington hero
-   - keep banner full-width
-   - keep drawer button usable above banner
-   ========================================================= */
-
-/* ===== Top Moodle navbar ===== */
-#page-site-index .navbar.fixed-top {
-  min-height: 64px;
-  background: rgba(255,255,255,.96) !important;
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(23,42,78,.08) !important;
-  box-shadow: 0 4px 18px rgba(15,29,56,.08);
-  z-index: 1030;
-}
-
-#page-site-index .navbar.fixed-top .navbar-brand {
-  min-height: 64px;
-  padding: 0 18px 0 12px !important;
-  border-right: 1px solid rgba(23,42,78,.06);
-}
-
-#page-site-index .navbar.fixed-top .navbar-brand img.logo {
-  max-height: 40px !important;
-  width: auto !important;
-  object-fit: contain;
-}
-
-#page-site-index .primary-navigation .navigation .nav-link,
-#page-site-index .navbar.fixed-top .nav-link {
-  min-height: 64px;
-  display: inline-flex;
-  align-items: center;
-  color: #172A4E !important;
-  font-weight: 600;
-  border-radius: 0;
-  padding-left: 14px;
-  padding-right: 14px;
-}
-
-#page-site-index .primary-navigation .navigation .nav-link:hover,
-#page-site-index .navbar.fixed-top .nav-link:hover {
-  background: #F4F7FC;
-  color: #0F1D38 !important;
-}
-
-#page-site-index .primary-navigation .navigation .nav-link.active {
-  background: #F7FAFF;
-  color: #0F1D38 !important;
-  font-weight: 800;
-}
-
-/* ===== User area / edit mode polish ===== */
-#page-site-index #usernavigation {
-  align-items: center;
-}
-
-#page-site-index #usernavigation .popover-region-toggle,
-#page-site-index #usernavigation #user-menu-toggle {
-  border-radius: 999px;
-}
-
-#page-site-index #usernavigation .count-container {
-  background: #CE9412 !important;
-  color: #fff !important;
-  border: 2px solid #fff;
-  box-shadow: 0 2px 8px rgba(206,148,18,.26);
-}
-
-#page-site-index .editmode-switch-form {
-  margin-left: 10px;
-  padding-left: 14px;
-  border-left: 1px solid rgba(23,42,78,.10);
-}
-
-#page-site-index .editmode-switch-form label {
-  color: #172A4E !important;
-  font-weight: 700;
-}
-
-/* ===== Secondary Moodle course nav ===== */
-#page-site-index .secondary-navigation.moove {
-  background: #184EAA !important;
-  border: 0 !important;
-  box-shadow: 0 6px 18px rgba(15,29,56,.18);
-  margin: 0 !important;
-  min-height: 56px;
-  z-index: 1029;
-}
-
-#page-site-index .secondary-navigation.moove .moove-container-fluid {
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 34px;
-  padding-right: 34px;
-}
-
-#page-site-index .secondary-navigation.moove .nav-tabs {
-  border-bottom: 0 !important;
-}
-
-#page-site-index .secondary-navigation.moove .nav-link {
-  color: rgba(255,255,255,.92) !important;
-  min-height: 56px;
-  display: inline-flex;
-  align-items: center;
-  border: 0 !important;
-  border-radius: 0 !important;
-  font-weight: 700;
-  padding: 0 16px !important;
-  position: relative;
-}
-
-#page-site-index .secondary-navigation.moove .nav-link:hover {
-  color: #fff !important;
-  background: rgba(255,255,255,.08);
-}
-
-#page-site-index .secondary-navigation.moove .nav-link.active,
-#page-site-index .secondary-navigation.moove .nav-link.active_tree_node {
-  color: #fff !important;
-  background: transparent !important;
-}
-
-#page-site-index .secondary-navigation.moove .nav-link.active::after,
-#page-site-index .secondary-navigation.moove .nav-link.active_tree_node::after {
-  content: "";
-  position: absolute;
-  left: 16px;
-  right: 16px;
-  bottom: 0;
-  height: 3px;
-  background: #fff;
-  border-radius: 999px 999px 0 0;
-}
-
-/* ===== Remove the white gap above custom Brington hero ===== */
-/* Hide default frontpage heading area only on the front page. */
-#page-site-index #page-header {
-  display: none !important;
-}
-
-/* Remove Moove/Boost inner spacing around the frontpage topic. */
-#page-site-index #topofscroll.main-inner,
-#page-site-index #page-content,
-#page-site-index #region-main-box,
-#page-site-index #region-main,
-#page-site-index .course-content,
-#page-site-index #courseformat-frontpage-main-topic,
-#page-site-index .sitetopic,
-#page-site-index .sitetopic .section-list,
-#page-site-index .sitetopic .course-section,
-#page-site-index .sitetopic .section-item,
-#page-site-index .sitetopic .content,
-#page-site-index .sitetopic [data-for="sectioninfo"],
-#page-site-index .sitetopic .summarytext,
-#page-site-index .sitetopic .no-overflow {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-#page-site-index #topofscroll.main-inner,
-#page-site-index #region-main,
-#page-site-index .sitetopic .section-item {
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-}
-
-/* Keep edit-section gear available but remove the row height gap. */
-#page-site-index #courseformat-frontpage-main-topic > .mb-2 {
-  position: absolute;
-  z-index: 50;
-  top: 10px;
-  left: 12px;
-  margin: 0 !important;
-  padding: 0 !important;
-  width: auto;
-  height: auto;
-}
-
-#page-site-index #courseformat-frontpage-main-topic > .mb-2 a {
-  width: 32px;
-  height: 32px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255,255,255,.82);
-  color: #184EAA !important;
-  border: 1px solid rgba(24,78,170,.12);
-  border-radius: 999px;
-  box-shadow: 0 4px 14px rgba(15,29,56,.12);
-  backdrop-filter: blur(8px);
-}
-
-#page-site-index #courseformat-frontpage-main-topic > .mb-2 a:hover {
-  background: #fff;
-  color: #0F1D38 !important;
-}
-
-/* Do not let Moodle overflow wrapper clip the full-width custom hero. */
-#page-site-index .sitetopic .no-overflow {
-  overflow: visible !important;
-}
-
-/* Keep right drawer tab above banner without shrinking the banner. */
-#page-site-index .drawer-toggles,
-#page-site-index .drawer-toggler,
-#page-site-index .drawer-toggler .btn,
-#page-site-index .drawer-right-toggle,
-#page-site-index [data-region="right-hand-drawer"] {
-  z-index: 1055 !important;
-}
-
-/* On small widths, keep nav usable. */
-@media (max-width: 760px) {
-  #page-site-index .secondary-navigation.moove .moove-container-fluid {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  #page-site-index .secondary-navigation.moove .nav-link {
-    padding-left: 12px !important;
-    padding-right: 12px !important;
-  }
-}
-/* =========================================================
-   MOODLE HEADER LUXE PATCH v2.0
-   Scope: Front page only (#page-site-index)
-   Append AFTER previous header patch.
-   Style direction: premium navy/gold, glass, glow, no hero width change.
-   ========================================================= */
-
-/* ===== Premium global page tone ===== */
-#page-site-index {
-  background:
-    radial-gradient(circle at 8% 0%, rgba(206,148,18,.08), transparent 28%),
-    radial-gradient(circle at 86% 4%, rgba(46,127,203,.10), transparent 30%),
-    #ffffff;
-}
-
-/* ===== Main Moodle top navbar: luxe navy glass ===== */
-#page-site-index .navbar.fixed-top {
-  min-height: 68px !important;
-  background:
-    linear-gradient(115deg, rgba(8,22,47,.98) 0%, rgba(18,42,78,.98) 42%, rgba(22,78,170,.96) 100%) !important;
-  border-bottom: 1px solid rgba(227,174,68,.48) !important;
-  box-shadow:
-    0 14px 34px rgba(8,22,47,.30),
-    inset 0 -1px 0 rgba(255,255,255,.10) !important;
-  backdrop-filter: blur(14px);
-  z-index: 1035 !important;
-  padding-left: 0 !important;
-  padding-right: 14px !important;
-  overflow: visible;
-}
-
-#page-site-index .navbar.fixed-top::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent 0%, #CE9412 16%, #F6D37B 50%, #CE9412 84%, transparent 100%);
-  opacity: .95;
-  pointer-events: none;
-}
-
-#page-site-index .navbar.fixed-top::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -10px;
-  height: 10px;
-  background: linear-gradient(180deg, rgba(8,22,47,.20), transparent);
-  pointer-events: none;
-}
-
-/* ===== Logo area ===== */
-#page-site-index .navbar.fixed-top .navbar-brand {
-  min-height: 68px !important;
-  min-width: 146px;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin-right: 16px !important;
-  padding: 0 20px !important;
-  background:
-    linear-gradient(135deg, rgba(255,255,255,.98), rgba(245,249,255,.92)) !important;
-  border-right: 1px solid rgba(206,148,18,.32);
-  box-shadow:
-    inset -1px 0 0 rgba(255,255,255,.35),
-    8px 0 28px rgba(0,0,0,.18);
-}
-
-#page-site-index .navbar.fixed-top .navbar-brand img.logo {
-  max-height: 38px !important;
-  width: auto !important;
-  object-fit: contain;
-  filter: drop-shadow(0 2px 4px rgba(15,29,56,.14));
-}
-
-/* ===== Main nav links ===== */
-#page-site-index .primary-navigation .navigation .nav-link,
-#page-site-index .navbar.fixed-top .nav-link {
-  min-height: 68px !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  color: rgba(255,255,255,.88) !important;
-  font-weight: 750 !important;
-  letter-spacing: .01em;
-  border-radius: 0 !important;
-  padding: 0 15px !important;
-  position: relative;
-  transition: color .18s ease, background .18s ease, transform .18s ease;
-}
-
-#page-site-index .primary-navigation .navigation .nav-link::after {
-  content: "";
-  position: absolute;
-  left: 14px;
-  right: 14px;
-  bottom: 13px;
-  height: 2px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #CE9412, #F6D37B);
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform .18s ease;
-}
-
-#page-site-index .primary-navigation .navigation .nav-link:hover {
-  color: #ffffff !important;
-  background: rgba(255,255,255,.08) !important;
-  transform: translateY(-1px);
-}
-
-#page-site-index .primary-navigation .navigation .nav-link:hover::after {
-  transform: scaleX(1);
-}
-
-#page-site-index .primary-navigation .navigation .nav-link.active {
-  color: #0F1D38 !important;
-  background: linear-gradient(135deg, #FFFFFF 0%, #F8E7B7 100%) !important;
-  font-weight: 900 !important;
-  box-shadow:
-    0 10px 22px rgba(0,0,0,.18),
-    inset 0 -2px 0 rgba(206,148,18,.55);
-}
-
-#page-site-index .primary-navigation .navigation .nav-link.active::after {
-  transform: scaleX(1);
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-}
-
-/* Dropdown links */
-#page-site-index .navbar.fixed-top .dropdown-menu {
-  border: 1px solid rgba(206,148,18,.20) !important;
-  border-radius: 16px !important;
-  box-shadow: 0 20px 50px rgba(8,22,47,.22) !important;
-  overflow: hidden;
-}
-
-#page-site-index .navbar.fixed-top .dropdown-item {
-  font-weight: 650;
-  color: #172A4E !important;
-}
-
-#page-site-index .navbar.fixed-top .dropdown-item:hover {
-  background: #FFF7E6 !important;
-  color: #0F1D38 !important;
-}
-
-/* ===== Right user navigation ===== */
-#page-site-index #usernavigation {
-  align-items: center !important;
-  gap: 3px;
-}
-
-#page-site-index #usernavigation .popover-region-toggle,
-#page-site-index #usernavigation #user-menu-toggle {
-  min-height: 42px !important;
-  height: 42px !important;
-  min-width: 42px;
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  color: #fff !important;
-  border-radius: 999px !important;
-  background: rgba(255,255,255,.10) !important;
-  border: 1px solid rgba(255,255,255,.16) !important;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.12);
-  padding: 0 10px !important;
-}
-
-#page-site-index #usernavigation .popover-region-toggle:hover,
-#page-site-index #usernavigation #user-menu-toggle:hover {
-  background: rgba(255,255,255,.18) !important;
-}
-
-#page-site-index #usernavigation .icon {
-  color: #fff !important;
-}
-
-#page-site-index #usernavigation .count-container {
-  background: linear-gradient(135deg, #E23A3A, #CE9412) !important;
-  color: #fff !important;
-  border: 2px solid #0F1D38 !important;
-  box-shadow: 0 4px 12px rgba(206,148,18,.36) !important;
-  font-weight: 900 !important;
-}
-
-#page-site-index #usernavigation .userinitials {
-  background: linear-gradient(135deg, #FFFFFF, #F8E7B7) !important;
-  color: #172A4E !important;
-  border: 1px solid rgba(206,148,18,.38) !important;
-  font-weight: 900 !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,.16);
-}
-
-#page-site-index #usernavigation .divider {
-  border-left-color: rgba(255,255,255,.18) !important;
-}
-
-/* Edit mode switch: gold premium */
-#page-site-index .editmode-switch-form {
-  margin-left: 12px !important;
-  padding-left: 16px !important;
-  border-left: 1px solid rgba(255,255,255,.20) !important;
-}
-
-#page-site-index .editmode-switch-form label {
-  color: #fff !important;
-  font-weight: 850 !important;
-  letter-spacing: .01em;
-}
-
-#page-site-index .editmode-switch-form .form-check-input {
-  width: 42px;
-  height: 22px;
-  cursor: pointer;
-  border-color: rgba(255,255,255,.35) !important;
-  background-color: rgba(255,255,255,.24) !important;
-  box-shadow: none !important;
-}
-
-#page-site-index .editmode-switch-form .form-check-input:checked {
-  background-color: #CE9412 !important;
-  border-color: #F6D37B !important;
-  box-shadow: 0 0 0 3px rgba(206,148,18,.18) !important;
-}
-
-/* ===== Secondary nav: royal blue/gold bar ===== */
-#page-site-index .secondary-navigation.moove {
-  min-height: 62px !important;
-  background:
-    linear-gradient(115deg, #061936 0%, #0E3475 48%, #155BC0 100%) !important;
-  border: 0 !important;
-  box-shadow:
-    0 12px 26px rgba(8,22,47,.26),
-    inset 0 1px 0 rgba(255,255,255,.08),
-    inset 0 -1px 0 rgba(206,148,18,.52) !important;
-  position: relative;
-  z-index: 1030 !important;
-}
-
-#page-site-index .secondary-navigation.moove::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 18% 0%, rgba(246,211,123,.18), transparent 22%),
-    radial-gradient(circle at 76% 0%, rgba(255,255,255,.12), transparent 24%);
-  pointer-events: none;
-}
-
-#page-site-index .secondary-navigation.moove .moove-container-fluid {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding-left: 34px;
-  padding-right: 34px;
-  position: relative;
-  z-index: 2;
-}
-
-#page-site-index .secondary-navigation.moove .nav-tabs {
-  border-bottom: 0 !important;
-  gap: 4px;
-}
-
-#page-site-index .secondary-navigation.moove .nav-link {
-  min-height: 62px !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  border: 0 !important;
-  color: rgba(255,255,255,.86) !important;
-  font-weight: 800 !important;
-  padding: 0 17px !important;
-  position: relative;
-  border-radius: 14px 14px 0 0 !important;
-  transition: background .18s ease, color .18s ease, transform .18s ease;
-}
-
-#page-site-index .secondary-navigation.moove .nav-link:hover {
-  color: #fff !important;
-  background: rgba(255,255,255,.10) !important;
-  transform: translateY(-1px);
-}
-
-#page-site-index .secondary-navigation.moove .nav-link.active,
-#page-site-index .secondary-navigation.moove .nav-link.active_tree_node {
-  color: #172A4E !important;
-  background:
-    linear-gradient(180deg, #FFFFFF 0%, #FFF2CC 100%) !important;
-  box-shadow:
-    0 -2px 18px rgba(246,211,123,.26),
-    inset 0 1px 0 rgba(255,255,255,.9);
-}
-
-#page-site-index .secondary-navigation.moove .nav-link.active::after,
-#page-site-index .secondary-navigation.moove .nav-link.active_tree_node::after {
-  content: "";
-  position: absolute;
-  left: 16px;
-  right: 16px;
-  bottom: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #CE9412, #F6D37B, #CE9412);
-  border-radius: 999px 999px 0 0;
-}
-
-/* ===== Make drawer tab match the premium header ===== */
-#page-site-index .drawer-toggler.drawer-right-toggle .btn {
-  background: linear-gradient(135deg, #0E3475, #155BC0) !important;
-  color: #fff !important;
-  border: 1px solid rgba(246,211,123,.45) !important;
-  box-shadow: 0 12px 28px rgba(8,22,47,.28), inset 0 1px 0 rgba(255,255,255,.14) !important;
-}
-
-#page-site-index .drawer-toggler.drawer-right-toggle .btn:hover {
-  background: linear-gradient(135deg, #155BC0, #CE9412) !important;
-}
-
-/* ===== Keep the white gap removed from previous patch ===== */
-#page-site-index #page-header {
-  display: none !important;
-}
-
-#page-site-index #topofscroll.main-inner,
-#page-site-index #page-content,
-#page-site-index #region-main-box,
-#page-site-index #region-main,
-#page-site-index .course-content,
-#page-site-index #courseformat-frontpage-main-topic,
-#page-site-index .sitetopic,
-#page-site-index .sitetopic .section-list,
-#page-site-index .sitetopic .course-section,
-#page-site-index .sitetopic .section-item,
-#page-site-index .sitetopic .content,
-#page-site-index .sitetopic [data-for="sectioninfo"],
-#page-site-index .sitetopic .summarytext,
-#page-site-index .sitetopic .no-overflow {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-#page-site-index .sitetopic .no-overflow {
-  overflow: visible !important;
-}
-
-#page-site-index #topofscroll.main-inner,
-#page-site-index #region-main,
-#page-site-index .sitetopic .section-item {
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-}
-
-/* Gear edit button still available, but premium and floating */
-#page-site-index #courseformat-frontpage-main-topic > .mb-2 {
-  position: absolute;
-  z-index: 60;
-  top: 10px;
-  left: 12px;
-  margin: 0 !important;
-  padding: 0 !important;
-  width: auto;
-  height: auto;
-}
-
-#page-site-index #courseformat-frontpage-main-topic > .mb-2 a {
-  width: 34px;
-  height: 34px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255,255,255,.88);
-  color: #0E3475 !important;
-  border: 1px solid rgba(206,148,18,.32);
-  border-radius: 999px;
-  box-shadow: 0 8px 22px rgba(8,22,47,.18);
-  backdrop-filter: blur(8px);
-}
-
-#page-site-index #courseformat-frontpage-main-topic > .mb-2 a:hover {
-  background: linear-gradient(135deg, #FFFFFF, #FFF2CC);
-  color: #0F1D38 !important;
-}
-
-/* ===== Mobile safety ===== */
-@media (max-width: 900px) {
-  #page-site-index .navbar.fixed-top {
-    padding-right: 8px !important;
-  }
-
-  #page-site-index .navbar.fixed-top .navbar-brand {
-    min-width: 108px;
-    padding-left: 12px !important;
-    padding-right: 12px !important;
-  }
-
-  #page-site-index .primary-navigation .navigation .nav-link,
-  #page-site-index .secondary-navigation.moove .nav-link {
-    padding-left: 11px !important;
-    padding-right: 11px !important;
-    font-size: 13px;
-  }
-
-  #page-site-index .secondary-navigation.moove .moove-container-fluid {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
+/* ===== Skyline partner text image support ===== */
+.skl-brington-home .skl-partner .skl-skyline-text {
+  height:32px;
+  width:auto;
+  max-width:180px;
+  object-fit:contain;
+  display:block;
 }
 
 /* =========================================================
-   MOODLE GLOBAL HEADER LUXE FIX v2.1
-   Append AFTER Moodle Header Luxe Patch v2.0.
-   Goals:
-   1) Apply header style across Moodle pages, not only #page-site-index.
-   2) Make logo area visually synced with premium header.
-   3) Align menu items cleanly.
-   4) Remove frontpage gap between Moodle nav and Brington banner.
-   5) Keep Brington banner full-width.
+   MOODLE HEADER STABLE LUXE SYNC v2.2 FINAL
+   Integrated clean version.
+   - Global Moodle top header style.
+   - Stable menu alignment, no overlap.
+   - Frontpage-only gap cleanup.
+   - Keeps Brington banner full-width.
    ========================================================= */
 
-/* =========================================================
-   A. GLOBAL HEADER STYLE - applies across Moodle pages
-   ========================================================= */
-
+/* ===== 1) Stable global top navbar ===== */
 body.uses-drawers .navbar.fixed-top,
-body.theme .navbar.fixed-top,
 .navbar.fixed-top {
-  min-height: 68px !important;
-  height: 68px !important;
-  background:
-    linear-gradient(115deg, rgba(7,21,45,.98) 0%, rgba(15,39,74,.98) 42%, rgba(21,83,177,.96) 100%) !important;
-  border-bottom: 1px solid rgba(227,174,68,.48) !important;
-  box-shadow:
-    0 14px 34px rgba(8,22,47,.30),
-    inset 0 -1px 0 rgba(255,255,255,.10) !important;
-  backdrop-filter: blur(14px);
+  min-height: 62px !important;
+  height: 62px !important;
+  padding: 0 14px 0 0 !important;
+  overflow: visible !important;
+  background: linear-gradient(115deg, #071936 0%, #123A73 58%, #155BC0 100%) !important;
+  border-bottom: 1px solid rgba(206,148,18,.45) !important;
+  box-shadow: 0 8px 20px rgba(15,29,56,.22) !important;
+  backdrop-filter: none !important;
   z-index: 1035 !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  overflow: visible;
 }
 
 body.uses-drawers .navbar.fixed-top::before,
-.navbar.fixed-top::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent 0%, #CE9412 16%, #F6D37B 50%, #CE9412 84%, transparent 100%);
-  pointer-events: none;
+body.uses-drawers .navbar.fixed-top::after,
+.navbar.fixed-top::before,
+.navbar.fixed-top::after {
+  content: none !important;
+  display: none !important;
 }
 
-/* Logo area: make it feel like part of the header, not a pasted white box. */
+/* ===== 2) Logo area: clean, integrated, no huge white block ===== */
 body.uses-drawers .navbar.fixed-top .navbar-brand,
 .navbar.fixed-top .navbar-brand {
-  height: 68px !important;
-  min-height: 68px !important;
-  min-width: 188px;
-  max-width: 230px;
+  height: 62px !important;
+  min-height: 62px !important;
+  min-width: 150px !important;
+  max-width: 190px !important;
+  width: 170px !important;
+  margin: 0 12px 0 0 !important;
+  padding: 0 14px !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  margin: 0 18px 0 0 !important;
-  padding: 0 18px !important;
-  background:
-    linear-gradient(135deg, rgba(255,255,255,.98), rgba(248,244,232,.96)) !important;
-  border-right: 1px solid rgba(206,148,18,.42);
-  box-shadow:
-    inset -1px 0 0 rgba(255,255,255,.38),
-    8px 0 28px rgba(0,0,0,.16);
-  position: relative;
-  overflow: hidden;
+  background: rgba(255,255,255,.96) !important;
+  border-right: 1px solid rgba(206,148,18,.35) !important;
+  box-shadow: inset -1px 0 0 rgba(255,255,255,.55), 4px 0 14px rgba(0,0,0,.10) !important;
+  overflow: hidden !important;
+  border-radius: 0 !important;
 }
 
+body.uses-drawers .navbar.fixed-top .navbar-brand::before,
 body.uses-drawers .navbar.fixed-top .navbar-brand::after,
+.navbar.fixed-top .navbar-brand::before,
 .navbar.fixed-top .navbar-brand::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 12px;
-  bottom: 12px;
-  width: 2px;
-  border-radius: 999px;
-  background: linear-gradient(180deg, transparent, #CE9412, transparent);
-  opacity: .9;
+  content: none !important;
+  display: none !important;
 }
 
 body.uses-drawers .navbar.fixed-top .navbar-brand img.logo,
 .navbar.fixed-top .navbar-brand img.logo {
-  max-height: 44px !important;
+  max-height: 38px !important;
+  max-width: 145px !important;
   width: auto !important;
-  max-width: 170px !important;
+  height: auto !important;
   object-fit: contain !important;
-  padding: 3px 0 !important;
-  filter: drop-shadow(0 2px 5px rgba(15,29,56,.14));
+  padding: 0 !important;
+  filter: none !important;
 }
 
-/* Main nav alignment: every item is a centered pill, no uneven tall active block. */
+/* ===== 3) Top menu alignment: no jumping, no overlap ===== */
 body.uses-drawers .primary-navigation,
 body.uses-drawers .primary-navigation .moremenu,
 body.uses-drawers .primary-navigation .navigation,
@@ -1081,14 +426,16 @@ body.uses-drawers .primary-navigation .more-nav,
 .primary-navigation .moremenu,
 .primary-navigation .navigation,
 .primary-navigation .more-nav {
-  min-height: 68px !important;
-  height: 68px !important;
+  height: 62px !important;
+  min-height: 62px !important;
+  display: flex !important;
   align-items: center !important;
+  overflow: visible !important;
 }
 
 body.uses-drawers .primary-navigation .nav-item,
 .primary-navigation .nav-item {
-  height: 68px !important;
+  height: 62px !important;
   display: inline-flex !important;
   align-items: center !important;
 }
@@ -1097,19 +444,23 @@ body.uses-drawers .primary-navigation .navigation .nav-link,
 body.uses-drawers .navbar.fixed-top .nav-link,
 .primary-navigation .navigation .nav-link,
 .navbar.fixed-top .nav-link {
-  min-height: 42px !important;
-  height: 42px !important;
+  height: 40px !important;
+  min-height: 40px !important;
+  line-height: 40px !important;
   display: inline-flex !important;
   align-items: center !important;
-  justify-content: center;
-  margin: 0 4px !important;
-  padding: 0 14px !important;
-  color: rgba(255,255,255,.88) !important;
+  justify-content: center !important;
+  margin: 0 3px !important;
+  padding: 0 13px !important;
+  border-radius: 10px !important;
+  color: rgba(255,255,255,.92) !important;
+  background: transparent !important;
+  font-size: 14px !important;
   font-weight: 750 !important;
-  letter-spacing: .01em;
-  border-radius: 14px !important;
-  position: relative;
-  transition: color .18s ease, background .18s ease, transform .18s ease, box-shadow .18s ease;
+  letter-spacing: 0 !important;
+  transform: none !important;
+  box-shadow: none !important;
+  position: relative !important;
 }
 
 body.uses-drawers .primary-navigation .navigation .nav-link:hover,
@@ -1117,56 +468,60 @@ body.uses-drawers .navbar.fixed-top .nav-link:hover,
 .primary-navigation .navigation .nav-link:hover,
 .navbar.fixed-top .nav-link:hover {
   color: #fff !important;
-  background: rgba(255,255,255,.10) !important;
-  transform: translateY(-1px);
+  background: rgba(255,255,255,.12) !important;
+  transform: none !important;
 }
 
 body.uses-drawers .primary-navigation .navigation .nav-link.active,
 .primary-navigation .navigation .nav-link.active {
-  color: #0F1D38 !important;
-  background: linear-gradient(135deg, #FFFFFF 0%, #FFF1C6 100%) !important;
-  font-weight: 900 !important;
-  box-shadow:
-    0 10px 22px rgba(0,0,0,.18),
-    inset 0 -2px 0 rgba(206,148,18,.55);
+  color: #172A4E !important;
+  background: #FFF3CF !important;
+  font-weight: 850 !important;
+  box-shadow: inset 0 -2px 0 #CE9412 !important;
 }
 
-body.uses-drawers .primary-navigation .navigation .nav-link.active::after,
-.primary-navigation .navigation .nav-link.active::after {
-  content: "";
-  position: absolute;
-  left: 13px;
-  right: 13px;
-  bottom: 5px;
-  height: 2px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #CE9412, #F6D37B, #CE9412);
+body.uses-drawers .primary-navigation .navigation .nav-link::after,
+.primary-navigation .navigation .nav-link::after {
+  content: none !important;
+  display: none !important;
 }
 
-/* User navigation alignment */
+/* Dropdown menu should appear normally, not be affected by nav pill styles. */
+body.uses-drawers .navbar.fixed-top .dropdown-menu,
+.navbar.fixed-top .dropdown-menu {
+  margin-top: 6px !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(206,148,18,.20) !important;
+  box-shadow: 0 14px 34px rgba(8,22,47,.20) !important;
+  overflow: hidden !important;
+}
+
+/* ===== 4) User nav/edit mode alignment ===== */
 body.uses-drawers #usernavigation,
 #usernavigation {
-  height: 68px !important;
+  height: 62px !important;
+  min-height: 62px !important;
+  display: flex !important;
   align-items: center !important;
-  gap: 4px;
+  gap: 4px !important;
 }
 
 body.uses-drawers #usernavigation .popover-region-toggle,
 body.uses-drawers #usernavigation #user-menu-toggle,
 #usernavigation .popover-region-toggle,
 #usernavigation #user-menu-toggle {
-  min-height: 42px !important;
-  height: 42px !important;
-  min-width: 42px;
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  color: #fff !important;
+  height: 36px !important;
+  min-height: 36px !important;
+  min-width: 36px !important;
   border-radius: 999px !important;
-  background: rgba(255,255,255,.10) !important;
-  border: 1px solid rgba(255,255,255,.16) !important;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.12);
-  padding: 0 10px !important;
+  background: rgba(255,255,255,.14) !important;
+  border: 1px solid rgba(255,255,255,.18) !important;
+  box-shadow: none !important;
+  color: #fff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 8px !important;
 }
 
 body.uses-drawers #usernavigation .icon,
@@ -1174,112 +529,70 @@ body.uses-drawers #usernavigation .icon,
   color: #fff !important;
 }
 
-body.uses-drawers #usernavigation .count-container,
-#usernavigation .count-container {
-  background: linear-gradient(135deg, #E23A3A, #CE9412) !important;
-  color: #fff !important;
-  border: 2px solid #0F1D38 !important;
-  box-shadow: 0 4px 12px rgba(206,148,18,.36) !important;
-  font-weight: 900 !important;
-}
-
 body.uses-drawers #usernavigation .userinitials,
 #usernavigation .userinitials {
-  background: linear-gradient(135deg, #FFFFFF, #F8E7B7) !important;
+  background: #FFF3CF !important;
   color: #172A4E !important;
-  border: 1px solid rgba(206,148,18,.38) !important;
-  font-weight: 900 !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,.16);
+  border: 1px solid rgba(206,148,18,.45) !important;
+  font-weight: 850 !important;
 }
 
 body.uses-drawers #usernavigation .divider,
 #usernavigation .divider {
-  border-left-color: rgba(255,255,255,.20) !important;
+  height: 32px !important;
+  border-left-color: rgba(255,255,255,.22) !important;
 }
 
-/* Edit mode switch */
 body.uses-drawers .editmode-switch-form,
 .editmode-switch-form {
-  height: 68px !important;
+  height: 62px !important;
+  min-height: 62px !important;
+  margin: 0 0 0 10px !important;
+  padding-left: 14px !important;
+  display: flex !important;
   align-items: center !important;
-  margin-left: 12px !important;
-  padding-left: 16px !important;
   border-left: 1px solid rgba(255,255,255,.20) !important;
 }
 
 body.uses-drawers .editmode-switch-form label,
 .editmode-switch-form label {
   color: #fff !important;
-  font-weight: 850 !important;
-  letter-spacing: .01em;
+  font-weight: 750 !important;
 }
 
-body.uses-drawers .editmode-switch-form .form-check-input,
-.editmode-switch-form .form-check-input {
-  width: 42px;
-  height: 22px;
-  cursor: pointer;
-  border-color: rgba(255,255,255,.35) !important;
-  background-color: rgba(255,255,255,.24) !important;
-  box-shadow: none !important;
-}
-
-body.uses-drawers .editmode-switch-form .form-check-input:checked,
-.editmode-switch-form .form-check-input:checked {
-  background-color: #CE9412 !important;
-  border-color: #F6D37B !important;
-  box-shadow: 0 0 0 3px rgba(206,148,18,.18) !important;
-}
-
-/* Dropdowns */
-body.uses-drawers .navbar.fixed-top .dropdown-menu,
-.navbar.fixed-top .dropdown-menu {
-  border: 1px solid rgba(206,148,18,.20) !important;
-  border-radius: 16px !important;
-  box-shadow: 0 20px 50px rgba(8,22,47,.22) !important;
-  overflow: hidden;
-}
-
-body.uses-drawers .navbar.fixed-top .dropdown-item,
-.navbar.fixed-top .dropdown-item {
-  font-weight: 650;
-  color: #172A4E !important;
-}
-
-body.uses-drawers .navbar.fixed-top .dropdown-item:hover,
-.navbar.fixed-top .dropdown-item:hover {
-  background: #FFF7E6 !important;
-  color: #0F1D38 !important;
-}
-
-/* =========================================================
-   B. SECONDARY COURSE NAV - global visual, but safe
-   ========================================================= */
-
+/* ===== 5) Secondary nav: stable, no raised pill overlap ===== */
 body.uses-drawers .secondary-navigation.moove,
 .secondary-navigation.moove {
-  min-height: 58px !important;
-  height: 58px !important;
-  background:
-    linear-gradient(115deg, #061936 0%, #0E3475 48%, #155BC0 100%) !important;
-  border: 0 !important;
-  box-shadow:
-    0 8px 22px rgba(8,22,47,.24),
-    inset 0 1px 0 rgba(255,255,255,.08),
-    inset 0 -1px 0 rgba(206,148,18,.52) !important;
-  position: relative;
+  height: 54px !important;
+  min-height: 54px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: linear-gradient(115deg, #061936 0%, #123A73 60%, #155BC0 100%) !important;
+  border-top: 1px solid rgba(255,255,255,.08) !important;
+  border-bottom: 1px solid rgba(206,148,18,.38) !important;
+  box-shadow: 0 7px 18px rgba(15,29,56,.18) !important;
+  position: relative !important;
   z-index: 1030 !important;
+  overflow: visible !important;
+}
+
+body.uses-drawers .secondary-navigation.moove::before,
+body.uses-drawers .secondary-navigation.moove::after,
+.secondary-navigation.moove::before,
+.secondary-navigation.moove::after {
+  content: none !important;
+  display: none !important;
 }
 
 body.uses-drawers .secondary-navigation.moove .moove-container-fluid,
 .secondary-navigation.moove .moove-container-fluid {
-  max-width: 1280px;
-  height: 58px !important;
-  margin: 0 auto;
-  padding-left: 34px;
-  padding-right: 34px;
-  display: flex;
-  align-items: center;
+  max-width: 1280px !important;
+  height: 54px !important;
+  min-height: 54px !important;
+  margin: 0 auto !important;
+  padding: 0 34px !important;
+  display: flex !important;
+  align-items: center !important;
 }
 
 body.uses-drawers .secondary-navigation.moove .moremenu,
@@ -1288,43 +601,47 @@ body.uses-drawers .secondary-navigation.moove .nav-tabs,
 .secondary-navigation.moove .moremenu,
 .secondary-navigation.moove .navigation,
 .secondary-navigation.moove .nav-tabs {
-  min-height: 58px !important;
-  height: 58px !important;
+  height: 54px !important;
+  min-height: 54px !important;
   display: flex !important;
   align-items: center !important;
-  border-bottom: 0 !important;
-  gap: 6px;
+  gap: 4px !important;
+  border: 0 !important;
+  margin: 0 !important;
 }
 
 body.uses-drawers .secondary-navigation.moove .nav-item,
 .secondary-navigation.moove .nav-item {
-  height: 58px !important;
+  height: 54px !important;
   display: inline-flex !important;
   align-items: center !important;
 }
 
 body.uses-drawers .secondary-navigation.moove .nav-link,
 .secondary-navigation.moove .nav-link {
-  min-height: 40px !important;
-  height: 40px !important;
+  height: 38px !important;
+  min-height: 38px !important;
+  line-height: 38px !important;
+  margin: 0 2px !important;
+  padding: 0 14px !important;
+  border: 0 !important;
+  border-radius: 10px !important;
   display: inline-flex !important;
   align-items: center !important;
-  justify-content: center;
-  border: 0 !important;
-  color: rgba(255,255,255,.86) !important;
-  font-weight: 800 !important;
-  padding: 0 15px !important;
-  margin: 0 !important;
-  position: relative;
-  border-radius: 14px !important;
-  transition: background .18s ease, color .18s ease, transform .18s ease;
+  justify-content: center !important;
+  color: rgba(255,255,255,.90) !important;
+  background: transparent !important;
+  font-size: 14px !important;
+  font-weight: 750 !important;
+  transform: none !important;
+  box-shadow: none !important;
 }
 
 body.uses-drawers .secondary-navigation.moove .nav-link:hover,
 .secondary-navigation.moove .nav-link:hover {
   color: #fff !important;
-  background: rgba(255,255,255,.10) !important;
-  transform: translateY(-1px);
+  background: rgba(255,255,255,.12) !important;
+  transform: none !important;
 }
 
 body.uses-drawers .secondary-navigation.moove .nav-link.active,
@@ -1332,36 +649,22 @@ body.uses-drawers .secondary-navigation.moove .nav-link.active_tree_node,
 .secondary-navigation.moove .nav-link.active,
 .secondary-navigation.moove .nav-link.active_tree_node {
   color: #172A4E !important;
-  background: linear-gradient(180deg, #FFFFFF 0%, #FFF2CC 100%) !important;
-  box-shadow:
-    0 8px 18px rgba(8,22,47,.18),
-    inset 0 1px 0 rgba(255,255,255,.9);
+  background: #FFF3CF !important;
+  font-weight: 850 !important;
+  box-shadow: inset 0 -2px 0 #CE9412 !important;
 }
 
-body.uses-drawers .secondary-navigation.moove .nav-link.active::after,
-body.uses-drawers .secondary-navigation.moove .nav-link.active_tree_node::after,
-.secondary-navigation.moove .nav-link.active::after,
-.secondary-navigation.moove .nav-link.active_tree_node::after {
-  content: "";
-  position: absolute;
-  left: 14px;
-  right: 14px;
-  bottom: 4px;
-  height: 3px;
-  background: linear-gradient(90deg, #CE9412, #F6D37B, #CE9412);
-  border-radius: 999px;
+body.uses-drawers .secondary-navigation.moove .nav-link::after,
+.secondary-navigation.moove .nav-link::after {
+  content: none !important;
+  display: none !important;
 }
 
-/* =========================================================
-   C. FRONTPAGE ONLY - remove gap above Brington banner
-   ========================================================= */
-
-/* Hide default page title area only on front page. */
+/* ===== 6) Frontpage-only gap cleanup ===== */
 #page-site-index #page-header {
   display: none !important;
 }
 
-/* The drawer toggles row caused the white gap. Make it overlay, not reserve height. */
 #page-site-index .drawer-toggles {
   position: absolute !important;
   top: 8px !important;
@@ -1371,15 +674,14 @@ body.uses-drawers .secondary-navigation.moove .nav-link.active_tree_node::after,
   margin: 0 !important;
   padding: 0 !important;
   z-index: 1058 !important;
-  pointer-events: none;
+  pointer-events: none !important;
 }
 
 #page-site-index .drawer-toggles .drawer-toggler,
 #page-site-index .drawer-toggles .drawer-toggler .btn {
-  pointer-events: auto;
+  pointer-events: auto !important;
 }
 
-/* Remove all frontpage content spacing before the custom section. */
 #page-site-index #topofscroll.main-inner,
 #page-site-index #page-content,
 #page-site-index #region-main-box,
@@ -1410,64 +712,59 @@ body.uses-drawers .secondary-navigation.moove .nav-link.active_tree_node::after,
   overflow: visible !important;
 }
 
-/* Keep edit-section gear available but do not let it create a white row. */
+/* Frontpage edit gear: small floating button, no white row */
 #page-site-index #courseformat-frontpage-main-topic > .mb-2 {
   position: absolute !important;
-  z-index: 60;
-  top: 10px;
-  left: 12px;
+  z-index: 60 !important;
+  top: 10px !important;
+  left: 12px !important;
   margin: 0 !important;
   padding: 0 !important;
-  width: auto;
-  height: auto;
+  width: auto !important;
+  height: auto !important;
 }
 
 #page-site-index #courseformat-frontpage-main-topic > .mb-2 a {
-  width: 34px;
-  height: 34px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255,255,255,.88);
-  color: #0E3475 !important;
-  border: 1px solid rgba(206,148,18,.32);
-  border-radius: 999px;
-  box-shadow: 0 8px 22px rgba(8,22,47,.18);
-  backdrop-filter: blur(8px);
+  width: 32px !important;
+  height: 32px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(255,255,255,.90) !important;
+  color: #123A73 !important;
+  border: 1px solid rgba(206,148,18,.32) !important;
+  border-radius: 999px !important;
+  box-shadow: 0 6px 18px rgba(8,22,47,.16) !important;
 }
 
-/* =========================================================
-   D. Mobile safety
-   ========================================================= */
-
+/* ===== 7) Mobile safety ===== */
 @media (max-width: 900px) {
   body.uses-drawers .navbar.fixed-top .navbar-brand,
   .navbar.fixed-top .navbar-brand {
-    min-width: 118px;
-    max-width: 150px;
-    padding-left: 12px !important;
-    padding-right: 12px !important;
+    width: 118px !important;
+    min-width: 118px !important;
+    max-width: 118px !important;
+    padding: 0 10px !important;
   }
 
   body.uses-drawers .navbar.fixed-top .navbar-brand img.logo,
   .navbar.fixed-top .navbar-brand img.logo {
-    max-width: 112px !important;
-    max-height: 36px !important;
+    max-width: 100px !important;
+    max-height: 34px !important;
   }
 
   body.uses-drawers .primary-navigation .navigation .nav-link,
   body.uses-drawers .secondary-navigation.moove .nav-link,
   .primary-navigation .navigation .nav-link,
   .secondary-navigation.moove .nav-link {
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-    font-size: 13px;
+    padding-left: 9px !important;
+    padding-right: 9px !important;
+    font-size: 13px !important;
   }
 
   body.uses-drawers .secondary-navigation.moove .moove-container-fluid,
   .secondary-navigation.moove .moove-container-fluid {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
 }
-

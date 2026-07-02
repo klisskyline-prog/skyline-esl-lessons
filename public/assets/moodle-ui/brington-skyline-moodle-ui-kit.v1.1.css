@@ -1,145 +1,293 @@
 /* =========================================================
-   BRINGTON MOODLE SECTION - CLONE ORIGINAL v3.0
-   Source: brington-home original, header/footer removed.
-   All classes renamed to skl-* and scoped under .skl-brington-home.
-   Upload path:
-   assets/moodle-ui/brington-skyline-moodle-ui-kit.v1.1.css
+   BRINGTON MOODLE SECTION - v3.1 FIXED
+   Clone original hero + Core Programs, header/footer removed.
+   All classes are skl-* and scoped under .skl-brington-home.
+   Upload over: assets/moodle-ui/brington-skyline-moodle-ui-kit.v1.1.css
    ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 
 .skl-brington-home {
-  --navy:#172A4E; --navy-deep:#0F1D38; --gold:#CE9412; --gold-lt:#E3AE44;
-    --ink:#1F2A44; --muted:#5C6678; --line:#E8E4DB;
-    --p-k12:#C9891A; --p-esl:#2F9E8B; --p-ielts:#7B5AC6;
-    --p-sat:#2E7FCB; --p-chin:#D24B3B; --p-ai:#12A08A; --p-kor:#7E56C4; --p-vie:#33A05C; --p-fra:#2E58A6; --p-spa:#D9542E;
-  font-family:'Inter',system-ui,sans-serif;
-  color:var(--ink);
-  background:#fff;
-  -webkit-font-smoothing:antialiased;
-  line-height:1.5;
+  --skl-navy:#172A4E;
+  --skl-navy-deep:#0F1D38;
+  --skl-gold:#CE9412;
+  --skl-gold-lt:#E3AE44;
+  --skl-ink:#1F2A44;
+  --skl-muted:#5C6678;
+  --skl-line:#E8E4DB;
+  --skl-p-k12:#C9891A;
+  --skl-p-esl:#2F9E8B;
+  --skl-p-ielts:#7B5AC6;
+  --skl-p-sat:#2E7FCB;
+  --skl-p-chin:#D24B3B;
+  --skl-p-ai:#12A08A;
+  --skl-p-kor:#7E56C4;
+  --skl-p-vie:#33A05C;
+  --skl-p-fra:#2E58A6;
+  --skl-p-spa:#D9542E;
   width:100%;
+  margin:0 auto;
+  background:#fff;
+  color:var(--skl-ink);
+  font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  overflow:hidden;
 }
 
 .skl-brington-home *,
 .skl-brington-home *::before,
-.skl-brington-home *::after {
-  box-sizing:border-box;
-}
-
-.skl-brington-home * {
-  margin:0;
-  padding:0;
-}
-
-.skl-brington-home img {
-  max-width:100%;
-  height:auto;
-  display:block;
-}
-
-.skl-brington-home a {
-  text-decoration:none;
-}
-
-.skl-brington-home .skl-skyline-logo {
-  height:36px;
-  width:auto;
-  max-width:180px;
-  object-fit:contain;
-}
+.skl-brington-home *::after { box-sizing:border-box; }
+.skl-brington-home * { margin:0; padding:0; }
+.skl-brington-home img { max-width:100%; height:auto; display:block; }
+.skl-brington-home a { text-decoration:none; }
+.skl-brington-home .skl-wrap { max-width:1280px; margin:0 auto; padding:0 34px; }
+.skl-brington-home .skl-serif { font-family:'Playfair Display',Georgia,'Times New Roman',serif; }
 
 /* ===== HERO ===== */
-  .skl-brington-home .skl-hero{position:relative;overflow:hidden;background:linear-gradient(118deg,#E6EEFB 0%,#EEF4FC 52%,#F6F9FD 100%)}
-  .skl-brington-home .skl-hero-map{position:absolute;inset:0;width:100%;height:100%;z-index:1;opacity:.12;color:#2A5C9E;pointer-events:none}
-  .skl-brington-home .skl-hero-photo{position:absolute;top:0;right:0;height:100%;width:56%;z-index:2;
-    -webkit-mask-image:linear-gradient(to right,transparent 0,#000 27%,#000 100%);
-    mask-image:linear-gradient(to right,transparent 0,#000 27%,#000 100%)}
-  .skl-brington-home .skl-hero-photo img{width:100%;height:100%;object-fit:cover;object-position:52% 46%;display:block}
-  .skl-brington-home .skl-hero-in{position:relative;z-index:3;padding:38px 0 54px;min-height:378px;display:flex;align-items:center}
-  .skl-brington-home .skl-hero-copy{max-width:560px}
-  .skl-brington-home .skl-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold)}
-  .skl-brington-home .skl-eyebrow svg{width:20px;height:20px}
-  .skl-brington-home h1.hero-h{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(36px,4vw,47px);line-height:1.08;letter-spacing:-.5px;color:var(--navy);margin:16px 0 0}
-  .skl-brington-home h1.hero-h .skl-g{color:var(--gold)}
-  .skl-brington-home .skl-hero-rule{width:70px;height:4px;background:var(--gold);border-radius:4px;margin:24px 0 22px}
-  .skl-brington-home .skl-lede{font-size:18px;color:#3E4A60;max-width:470px;line-height:1.6}
+.skl-brington-home .skl-hero {
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(118deg,#E6EEFB 0%,#EEF4FC 52%,#F6F9FD 100%);
+}
 
-  .skl-brington-home .skl-partner{margin-top:28px;display:inline-flex;align-items:stretch;background:#fff;border:1px solid #E7EBF2;border-radius:14px;box-shadow:0 8px 26px rgba(23,42,78,.08);overflow:hidden}
-  .skl-brington-home .skl-partner .skl-col{display:flex;align-items:center;gap:11px;padding:15px 22px}
-  .skl-brington-home .skl-partner img{height:36px;width:auto}
-  .skl-brington-home .skl-partner .skl-lbl{font-size:11px;color:var(--muted);line-height:1.35}
-  .skl-brington-home .skl-partner .skl-lbl b{display:block;font-size:15px;color:var(--navy);font-family:'Playfair Display',serif;font-weight:700}
-  .skl-brington-home .skl-partner .skl-divider{width:1px;background:#E7EBF2}
-  .skl-brington-home .sky{display:flex;flex-direction:column;line-height:1}
-  .skl-brington-home .sky .sw{font-family:'Playfair Display',serif;font-weight:700;font-size:20px;color:#2A5C9E}
-  .skl-brington-home .sky .sw i{color:var(--gold);font-style:normal}
-  .skl-brington-home .sky small{font-family:'Inter';font-weight:700;font-size:8px;letter-spacing:3.5px;color:var(--muted);margin-top:3px}
-  .skl-brington-home .sky-lockup{display:flex;align-items:center;gap:9px}
-  .skl-brington-home .sky-shield{height:40px;width:auto;display:block}
-  .skl-brington-home .sky-word{height:23px;width:auto;display:block}
+/* replaces the problematic inline SVG map/icon with safe CSS dots */
+.skl-brington-home .skl-hero-map {
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  opacity:.18;
+  background-image:radial-gradient(circle, rgba(42,92,158,.35) 0 5px, transparent 6px);
+  background-size:52px 52px;
+  background-position:110px 18px;
+  -webkit-mask-image:linear-gradient(to right,#000 0%,#000 36%,transparent 58%);
+  mask-image:linear-gradient(to right,#000 0%,#000 36%,transparent 58%);
+}
 
-  .skl-brington-home .skl-record{margin-top:18px;display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--muted);max-width:430px}
-  .skl-brington-home .skl-record svg{width:19px;height:19px;color:var(--navy);flex-shrink:0;margin-top:1px}
-  .skl-brington-home .skl-record b{color:var(--ink);font-weight:600}
-
-  /* hero photo handled as full-bleed background above */
-
-  .skl-brington-home .skl-hero-swoosh{position:absolute;left:0;right:0;bottom:0;width:100%;height:88px;z-index:5}
-
-  /* ===== CORE PROGRAMS ===== */
-  .skl-brington-home .skl-programs{padding:22px 0 60px;background:#fff}
-  .skl-brington-home .skl-sec-head{text-align:center;margin:8px 0 0}
-  .skl-brington-home .skl-sec-head h2{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(32px,3.6vw,44px);color:var(--navy)}
-  .skl-brington-home .skl-sec-head .skl-u{width:60px;height:4px;background:var(--gold);border-radius:4px;margin:12px auto 0}
-  .skl-brington-home .skl-sec-head p{margin-top:16px;color:var(--muted);font-size:16.5px}
-
-  .skl-brington-home .skl-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:40px}
-  .skl-brington-home .skl-pcard{background:#fff;border:1px solid #ECE9E1;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;
-    transition:transform .16s ease,box-shadow .16s ease}
-  .skl-brington-home .skl-pcard:hover{transform:translateY(-5px);box-shadow:0 18px 38px rgba(23,42,78,.13)}
-  .skl-brington-home .skl-ptile{width:100%;background:#F3F6FA;line-height:0}
-  .skl-brington-home .skl-ptile img{width:100%;height:auto;display:block}
-  .skl-brington-home .skl-pbody{padding:15px 16px 18px;display:flex;flex-direction:column;flex:1}
-  .skl-brington-home .skl-badge{align-self:flex-start;font-size:9.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:#fff;background:var(--ac);padding:3px 10px;border-radius:20px;margin-bottom:9px}
-  .skl-brington-home .skl-pcard h3{font-family:'Playfair Display',serif;font-weight:700;font-size:16.5px;color:var(--navy);line-height:1.22}
-  .skl-brington-home .skl-pcard p{margin-top:8px;color:var(--muted);font-size:13px;line-height:1.5;flex:1}
-  .skl-brington-home .skl-plink{margin-top:14px;display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:13px;color:var(--ac);text-decoration:none}
-  .skl-brington-home .skl-plink svg{width:15px;height:15px;transition:transform .15s ease}
-  .skl-brington-home .skl-pcard:hover .skl-plink svg{transform:translateX(4px)}
-
-  
-@media(max-width:1080px){
-    .skl-brington-home .skl-grid{grid-template-columns:repeat(4,1fr)}
-    .skl-brington-home .skl-hero-in{min-height:0;padding:30px 0 44px;display:block}
-    .skl-brington-home .skl-hero-copy{max-width:none}
-    .skl-brington-home .skl-hero-photo{position:relative;width:100%;height:auto;margin-top:22px;z-index:3;
-      -webkit-mask-image:none;mask-image:none;border-radius:16px;overflow:hidden;box-shadow:0 12px 30px rgba(23,42,78,.15)}
-    .skl-brington-home .skl-hero-photo img{height:auto;aspect-ratio:1.95/1}
-    .skl-brington-home .skl-hero-map{display:none}
-  }
-  @media(max-width:680px){
-    .skl-brington-home .skl-wrap{padding:0 20px}
-    .skl-brington-home .skl-grid{grid-template-columns:repeat(2,1fr)}
-  }
-  @media(max-width:440px){.skl-grid{grid-template-columns:1fr}}
-  @media(prefers-reduced-motion:reduce){*{transition:none!important}}
-  .skl-brington-home a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-
-
-/* Explicit safety selectors for Moodle editor / verification */
-.skl-brington-home .skl-serif {
-  font-family:'Playfair Display',Georgia,serif;
+.skl-brington-home .skl-hero-photo {
+  position:absolute;
+  top:0;
+  right:0;
+  height:100%;
+  width:56%;
+  z-index:2;
+  -webkit-mask-image:linear-gradient(to right,transparent 0,#000 27%,#000 100%);
+  mask-image:linear-gradient(to right,transparent 0,#000 27%,#000 100%);
+}
+.skl-brington-home .skl-hero-photo img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:52% 46%;
+}
+.skl-brington-home .skl-hero-in {
+  position:relative;
+  z-index:3;
+  padding:38px 0 54px;
+  min-height:378px;
+  display:flex;
+  align-items:center;
+}
+.skl-brington-home .skl-hero-copy { max-width:560px; }
+.skl-brington-home .skl-eyebrow {
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  color:var(--skl-gold);
+}
+.skl-brington-home .skl-eyebrow-mark {
+  width:20px;
+  height:20px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--skl-gold);
+  font-size:17px;
+  line-height:1;
+  flex:0 0 20px;
 }
 .skl-brington-home .skl-hero-h {
-  font-family:'Playfair Display',serif;
+  font-family:'Playfair Display',Georgia,'Times New Roman',serif;
   font-weight:800;
   font-size:clamp(36px,4vw,47px);
   line-height:1.08;
   letter-spacing:-.5px;
-  color:var(--navy);
+  color:var(--skl-navy);
   margin:16px 0 0;
 }
-.skl-brington-home .skl-hero-h .skl-g {
-  color:var(--gold);
+.skl-brington-home .skl-hero-h .skl-g { color:var(--skl-gold); }
+.skl-brington-home .skl-hero-rule {
+  width:70px;
+  height:4px;
+  background:var(--skl-gold);
+  border-radius:4px;
+  margin:24px 0 22px;
 }
+.skl-brington-home .skl-lede {
+  font-size:18px;
+  color:#3E4A60;
+  max-width:470px;
+  line-height:1.6;
+}
+.skl-brington-home .skl-partner {
+  margin-top:28px;
+  display:inline-flex;
+  align-items:stretch;
+  background:#fff;
+  border:1px solid #E7EBF2;
+  border-radius:14px;
+  box-shadow:0 8px 26px rgba(23,42,78,.08);
+  overflow:hidden;
+}
+.skl-brington-home .skl-partner .skl-col {
+  display:flex;
+  align-items:center;
+  gap:11px;
+  padding:15px 22px;
+}
+.skl-brington-home .skl-partner img { height:36px; width:auto; }
+.skl-brington-home .skl-partner .skl-skyline-logo { height:36px; max-width:176px; object-fit:contain; }
+.skl-brington-home .skl-lbl {
+  font-size:11px;
+  color:var(--skl-muted);
+  line-height:1.35;
+}
+.skl-brington-home .skl-lbl b {
+  display:block;
+  font-size:15px;
+  color:var(--skl-navy);
+  font-family:'Playfair Display',Georgia,'Times New Roman',serif;
+  font-weight:700;
+}
+.skl-brington-home .skl-divider { width:1px; background:#E7EBF2; }
+.skl-brington-home .skl-record {
+  margin-top:18px;
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  font-size:13.5px;
+  color:var(--skl-muted);
+  max-width:430px;
+}
+.skl-brington-home .skl-shield-mark {
+  width:19px;
+  height:19px;
+  flex:0 0 19px;
+  margin-top:1px;
+  display:inline-block;
+  background:var(--skl-navy);
+  clip-path:polygon(50% 0%, 90% 14%, 90% 52%, 50% 100%, 10% 52%, 10% 14%);
+}
+.skl-brington-home .skl-record b { color:var(--skl-ink); font-weight:600; }
+.skl-brington-home .skl-hero-swoosh {
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:88px;
+  z-index:5;
+}
+
+/* ===== CORE PROGRAMS ===== */
+.skl-brington-home .skl-programs { padding:22px 0 60px; background:#fff; }
+.skl-brington-home .skl-sec-head { text-align:center; margin:8px 0 0; }
+.skl-brington-home .skl-sec-head h2 {
+  font-family:'Playfair Display',Georgia,'Times New Roman',serif;
+  font-weight:700;
+  font-size:clamp(32px,3.6vw,44px);
+  color:var(--skl-navy);
+}
+.skl-brington-home .skl-u {
+  width:60px;
+  height:4px;
+  background:var(--skl-gold);
+  border-radius:4px;
+  margin:12px auto 0;
+}
+.skl-brington-home .skl-sec-head p { margin-top:16px; color:var(--skl-muted); font-size:16.5px; }
+.skl-brington-home .skl-grid {
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:18px;
+  margin-top:40px;
+}
+.skl-brington-home .skl-pcard {
+  background:#fff;
+  border:1px solid #ECE9E1;
+  border-radius:16px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  transition:transform .16s ease,box-shadow .16s ease;
+}
+.skl-brington-home .skl-pcard:hover { transform:translateY(-5px); box-shadow:0 18px 38px rgba(23,42,78,.13); }
+.skl-brington-home .skl-ptile { width:100%; background:#F3F6FA; line-height:0; }
+.skl-brington-home .skl-ptile img { width:100%; height:auto; display:block; }
+.skl-brington-home .skl-pbody { padding:15px 16px 18px; display:flex; flex-direction:column; flex:1; }
+.skl-brington-home .skl-badge {
+  align-self:flex-start;
+  font-size:9.5px;
+  font-weight:700;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+  color:#fff;
+  background:var(--skl-ac);
+  padding:3px 10px;
+  border-radius:20px;
+  margin-bottom:9px;
+}
+.skl-brington-home .skl-pcard h3 {
+  font-family:'Playfair Display',Georgia,'Times New Roman',serif;
+  font-weight:700;
+  font-size:16.5px;
+  color:var(--skl-navy);
+  line-height:1.22;
+}
+.skl-brington-home .skl-pcard p { margin-top:8px; color:var(--skl-muted); font-size:13px; line-height:1.5; flex:1; }
+.skl-brington-home .skl-plink {
+  margin-top:14px;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-weight:700;
+  font-size:13px;
+  color:var(--skl-ac);
+  text-decoration:none;
+}
+.skl-brington-home .skl-arrow { transition:transform .15s ease; }
+.skl-brington-home .skl-pcard:hover .skl-arrow { transform:translateX(4px); }
+
+@media(max-width:1080px){
+  .skl-brington-home .skl-grid { grid-template-columns:repeat(4,1fr); }
+  .skl-brington-home .skl-hero-in { min-height:0; padding:30px 0 44px; display:block; }
+  .skl-brington-home .skl-hero-copy { max-width:none; }
+  .skl-brington-home .skl-hero-photo {
+    position:relative;
+    width:100%;
+    height:auto;
+    margin-top:22px;
+    z-index:3;
+    -webkit-mask-image:none;
+    mask-image:none;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 12px 30px rgba(23,42,78,.15);
+  }
+  .skl-brington-home .skl-hero-photo img { height:auto; aspect-ratio:1.95/1; }
+  .skl-brington-home .skl-hero-map { display:none; }
+}
+@media(max-width:680px){
+  .skl-brington-home .skl-wrap { padding:0 20px; }
+  .skl-brington-home .skl-grid { grid-template-columns:repeat(2,1fr); }
+  .skl-brington-home .skl-partner { display:flex; flex-direction:column; }
+  .skl-brington-home .skl-divider { width:100%; height:1px; }
+}
+@media(max-width:440px){ .skl-brington-home .skl-grid { grid-template-columns:1fr; } }
+@media(prefers-reduced-motion:reduce){ .skl-brington-home * { transition:none!important; } }
+.skl-brington-home a:focus-visible { outline:3px solid var(--skl-gold); outline-offset:2px; }

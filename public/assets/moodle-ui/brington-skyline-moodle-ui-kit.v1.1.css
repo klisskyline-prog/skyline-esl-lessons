@@ -292,22 +292,48 @@
 @media(prefers-reduced-motion:reduce){ .skl-brington-home * { transition:none!important; } }
 .skl-brington-home a:focus-visible { outline:3px solid var(--skl-gold); outline-offset:2px; }
 
-/* ===== Moodle right drawer safe spacing fix ===== */
+/* ===== v3.2 Moodle drawer z-index fix - keep full-width banner ===== */
+/* Keep the banner full-width. Do not add side padding or reduce width. */
 .skl-brington-home {
-  max-width: 1680px;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: clamp(16px, 2vw, 34px);
-  padding-right: clamp(56px, 4vw, 72px);
+  position: relative;
+  z-index: 0;
+  isolation: auto;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  max-width: none !important;
 }
 
+/* Keep hero visually full bleed, but prevent it from sitting above Moodle drawer buttons. */
 .skl-brington-home .skl-hero {
-  border-radius: 0 0 18px 18px;
+  position: relative;
+  z-index: 0;
 }
 
-@media (max-width: 1080px) {
-  .skl-brington-home {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
+/* Original hero internal layers were higher than Moodle's right drawer tab in some themes.
+   Lowering them keeps the drawer button visually on top without changing layout width. */
+.skl-brington-home .skl-hero-map {
+  z-index: 0 !important;
+}
+
+.skl-brington-home .skl-hero-photo {
+  z-index: 1 !important;
+}
+
+.skl-brington-home .skl-hero-in {
+  z-index: 2 !important;
+}
+
+.skl-brington-home .skl-hero-swoosh {
+  z-index: 2 !important;
+  pointer-events: none;
+}
+
+/* Common Moodle/Boost drawer toggles should remain above the banner. */
+.drawer-toggler,
+.drawer-toggler .btn,
+[data-region="drawer-toggle"],
+[data-region="right-hand-drawer"],
+.drawer-right-toggle,
+.drawer-left-toggle {
+  z-index: 1050 !important;
 }

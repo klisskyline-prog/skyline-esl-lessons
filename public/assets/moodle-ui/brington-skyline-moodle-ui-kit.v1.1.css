@@ -337,3 +337,236 @@
 .drawer-left-toggle {
   z-index: 1050 !important;
 }
+
+/* =========================================================
+   MOODLE DEFAULT HEADER POLISH PATCH v1.0
+   Scope: front page only (#page-site-index)
+   Purpose:
+   - polish Moodle/Moove default top header + secondary nav
+   - remove white gap above custom Brington hero
+   - keep banner full-width
+   - keep drawer button usable above banner
+   ========================================================= */
+
+/* ===== Top Moodle navbar ===== */
+#page-site-index .navbar.fixed-top {
+  min-height: 64px;
+  background: rgba(255,255,255,.96) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(23,42,78,.08) !important;
+  box-shadow: 0 4px 18px rgba(15,29,56,.08);
+  z-index: 1030;
+}
+
+#page-site-index .navbar.fixed-top .navbar-brand {
+  min-height: 64px;
+  padding: 0 18px 0 12px !important;
+  border-right: 1px solid rgba(23,42,78,.06);
+}
+
+#page-site-index .navbar.fixed-top .navbar-brand img.logo {
+  max-height: 40px !important;
+  width: auto !important;
+  object-fit: contain;
+}
+
+#page-site-index .primary-navigation .navigation .nav-link,
+#page-site-index .navbar.fixed-top .nav-link {
+  min-height: 64px;
+  display: inline-flex;
+  align-items: center;
+  color: #172A4E !important;
+  font-weight: 600;
+  border-radius: 0;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+#page-site-index .primary-navigation .navigation .nav-link:hover,
+#page-site-index .navbar.fixed-top .nav-link:hover {
+  background: #F4F7FC;
+  color: #0F1D38 !important;
+}
+
+#page-site-index .primary-navigation .navigation .nav-link.active {
+  background: #F7FAFF;
+  color: #0F1D38 !important;
+  font-weight: 800;
+}
+
+/* ===== User area / edit mode polish ===== */
+#page-site-index #usernavigation {
+  align-items: center;
+}
+
+#page-site-index #usernavigation .popover-region-toggle,
+#page-site-index #usernavigation #user-menu-toggle {
+  border-radius: 999px;
+}
+
+#page-site-index #usernavigation .count-container {
+  background: #CE9412 !important;
+  color: #fff !important;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 8px rgba(206,148,18,.26);
+}
+
+#page-site-index .editmode-switch-form {
+  margin-left: 10px;
+  padding-left: 14px;
+  border-left: 1px solid rgba(23,42,78,.10);
+}
+
+#page-site-index .editmode-switch-form label {
+  color: #172A4E !important;
+  font-weight: 700;
+}
+
+/* ===== Secondary Moodle course nav ===== */
+#page-site-index .secondary-navigation.moove {
+  background: #184EAA !important;
+  border: 0 !important;
+  box-shadow: 0 6px 18px rgba(15,29,56,.18);
+  margin: 0 !important;
+  min-height: 56px;
+  z-index: 1029;
+}
+
+#page-site-index .secondary-navigation.moove .moove-container-fluid {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 34px;
+  padding-right: 34px;
+}
+
+#page-site-index .secondary-navigation.moove .nav-tabs {
+  border-bottom: 0 !important;
+}
+
+#page-site-index .secondary-navigation.moove .nav-link {
+  color: rgba(255,255,255,.92) !important;
+  min-height: 56px;
+  display: inline-flex;
+  align-items: center;
+  border: 0 !important;
+  border-radius: 0 !important;
+  font-weight: 700;
+  padding: 0 16px !important;
+  position: relative;
+}
+
+#page-site-index .secondary-navigation.moove .nav-link:hover {
+  color: #fff !important;
+  background: rgba(255,255,255,.08);
+}
+
+#page-site-index .secondary-navigation.moove .nav-link.active,
+#page-site-index .secondary-navigation.moove .nav-link.active_tree_node {
+  color: #fff !important;
+  background: transparent !important;
+}
+
+#page-site-index .secondary-navigation.moove .nav-link.active::after,
+#page-site-index .secondary-navigation.moove .nav-link.active_tree_node::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 0;
+  height: 3px;
+  background: #fff;
+  border-radius: 999px 999px 0 0;
+}
+
+/* ===== Remove the white gap above custom Brington hero ===== */
+/* Hide default frontpage heading area only on the front page. */
+#page-site-index #page-header {
+  display: none !important;
+}
+
+/* Remove Moove/Boost inner spacing around the frontpage topic. */
+#page-site-index #topofscroll.main-inner,
+#page-site-index #page-content,
+#page-site-index #region-main-box,
+#page-site-index #region-main,
+#page-site-index .course-content,
+#page-site-index #courseformat-frontpage-main-topic,
+#page-site-index .sitetopic,
+#page-site-index .sitetopic .section-list,
+#page-site-index .sitetopic .course-section,
+#page-site-index .sitetopic .section-item,
+#page-site-index .sitetopic .content,
+#page-site-index .sitetopic [data-for="sectioninfo"],
+#page-site-index .sitetopic .summarytext,
+#page-site-index .sitetopic .no-overflow {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+#page-site-index #topofscroll.main-inner,
+#page-site-index #region-main,
+#page-site-index .sitetopic .section-item {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Keep edit-section gear available but remove the row height gap. */
+#page-site-index #courseformat-frontpage-main-topic > .mb-2 {
+  position: absolute;
+  z-index: 50;
+  top: 10px;
+  left: 12px;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: auto;
+  height: auto;
+}
+
+#page-site-index #courseformat-frontpage-main-topic > .mb-2 a {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,.82);
+  color: #184EAA !important;
+  border: 1px solid rgba(24,78,170,.12);
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(15,29,56,.12);
+  backdrop-filter: blur(8px);
+}
+
+#page-site-index #courseformat-frontpage-main-topic > .mb-2 a:hover {
+  background: #fff;
+  color: #0F1D38 !important;
+}
+
+/* Do not let Moodle overflow wrapper clip the full-width custom hero. */
+#page-site-index .sitetopic .no-overflow {
+  overflow: visible !important;
+}
+
+/* Keep right drawer tab above banner without shrinking the banner. */
+#page-site-index .drawer-toggles,
+#page-site-index .drawer-toggler,
+#page-site-index .drawer-toggler .btn,
+#page-site-index .drawer-right-toggle,
+#page-site-index [data-region="right-hand-drawer"] {
+  z-index: 1055 !important;
+}
+
+/* On small widths, keep nav usable. */
+@media (max-width: 760px) {
+  #page-site-index .secondary-navigation.moove .moove-container-fluid {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  #page-site-index .secondary-navigation.moove .nav-link {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
+

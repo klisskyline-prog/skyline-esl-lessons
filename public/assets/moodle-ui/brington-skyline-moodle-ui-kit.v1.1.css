@@ -876,3 +876,15 @@
     padding-top: 30px !important;
   }
 }
+#page-site-index .skl-brington-home .skl-hero-swoosh {
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: -1px !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  height: 88px !important;
+  display: block !important;
+  z-index: 3 !important;
+  pointer-events: none !important;
+}
